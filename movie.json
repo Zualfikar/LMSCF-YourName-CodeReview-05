@@ -1,0 +1,61 @@
+var movie = [{
+
+      
+
+       "name": "The Polar Express",
+
+       "des": "The film tells the story of a young boy who, on Christmas Eve, sees a mysterious train bound for the North Pole stop outside his window and is invited aboard by its conductor. ",
+
+       "img": "img/movie1.jpg"
+       
+
+   }, {
+
+        
+
+      "name": "The Grinch",
+
+       "des": "The Grinch is an American animated movie produced in November 2018, directed by Yarrow Cheney and Scott Mosier and starring Benedict Cumberbatch audio.",
+
+       "img": "img/movie2.jpe"
+
+   }, {
+       
+      "name": "Skyfall",
+
+       "des": "Skyfall is the 23rd movie in the James Bond film series. Starring Daniel Craig as James Bond and Javier Bardem as Raul Salva, directed by Sam Mendes and written by Neil Purvis, Robert Wade and John Logan.",
+
+       "img": "img/movie3.jpg"
+
+   }, {
+
+        
+       "name": "Star Wars",
+
+       "des": "Star Wars is an epic space opera movie series created by George Lucas. The main series is made up of three triads, plus attachments. Star Wars is more than a movie series, but books, TV series, computer and video games, and picture books.",
+
+       "img": "img/movie4.jpg"
+
+   }, {
+
+      
+
+       "name": "The American President",
+
+       "des": "The American President is an American romantic drama film released in 1995, directed by Rob Rainer and written by Aaron Sorkin. The film's protagonists are: Michael Douglas, Annette Benning.",
+
+       "img": "img/movie5.jpg"
+
+   }, {
+
+      
+
+       "name": "Avengers",
+
+       "des": "Avengers is an American superhero movie, based on the Marvel comic characters Avengers. It is produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures.",
+
+       "img": "img/movie6.jpg"
+
+   } 
+
+   ];

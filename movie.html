@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movies</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+    
+<body class="bg-dark">
+<script type="text/javascript"  src="movie.json"></script>
+   
+	<h2 id="dd" class="text-center text-light p-2" style="background-color: black">Movie Factory</h2>
+		<h2 class="bg-dark text-light b-0 pl-4">Home</h2>
+	
+	<div class="d-flex justify-content-between bg-secondary" style="color: aliceblue;font-size: 25px">
+        <div>
+        </div>
+        <div style="font-size: 40px">Movie</div>
+        <div style="margin-bottom: 0px">
+            <button class="bg-secondary" style="font-size:36px;color: white; border: 0px solid gray">
+                <ol  style="font-size:36px;color: white" >
+                    <i class="fa fa-sort-up" data-min="mini" style="display: none"  ></i>
+                    <i class="fa fa-sort-down"data-max="maxi" ></i>Sort
+                </ol>
+            </button>
+        </div>
+    </div>
+	<div class="container-fluied  bg-secondary ">
+
+		<div class="row m-2 p-4 justify-content-md-between ">
+			<div id="0" style="background-color: black" class="col-lg-5 d-flex  ">
+				
+			</div>
+
+			<div id="1" style="background-color: black" class="col-lg-5 d-flex ">
+				
+			</div>
+            
+		</div>	
+		<div class="row m-2 p-4 justify-content-md-between ">
+			<div id="2" style="background-color: black" class="col-lg-5 d-flex    ">
+				
+			</div>
+
+			<div id="3" style="background-color: black" class="col-lg-5 d-flex  ">
+				
+			</div>
+            
+		</div>	
+
+		<div class="row m-2 p-4 justify-content-md-between ">
+			<div id="4" style="background-color: black" class="col-lg-5 d-flex     ">
+				
+			</div>
+
+			<div id="5" style="background-color: black" class="col-lg-5 d-flex  ">
+				
+			</div>
+            
+		</div>	
+
+			
+		</div>	
+	
+    
+	<footer class="m-0 text-light"><h1 class="bg-dark text-center">Movie Factory</h1></footer>
+
+
+    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script >
+    var test = movie;
+    let like=[0,0,0,0,0,0];
+     
+          for(i=0;i<6;i++){
+           
+    $('#'+i).html('<div class="p-2 m-2 " class="tt"><img  width="250"  height="300" src="'+ test[i].img+'"></div><div class="p-2 m-2 text-light  "><p class="text-primary">'+ test[i].name+'</p><p>'+ test[i].des+'</p><div class="d-flex justify-content-md-end   "><button class="rink"  data-id="'+i+'" style="color:green;background-color:black; border: 0px solid black;font-size:20px">Like<img  width="40px" height="35px"  src="img/like.svg"></button><div data-s="'+i+'" class="rounded-circle text-center"  style="background-color: green; width :40px; font-size: 30px;">'+like[i]+'</div></div></div>');
+            
+  
+    }
+    
+      $( ".rink" ).click(function() {
+          var pan=$(this).attr('data-id');
+          l=parseInt(pan);
+          
+          n=like[l];
+          like[l]=n+1;
+         
+    $('[data-s='+pan+']').html(like[l]);
+          
+         
+          
+});
+   
+  $('[data-max=maxi]').click(function(){
+      
+     for(i=0;i<test.length;i++){
+          like[i]=parseInt(like[i]);
+          for(j=(i+1); j<test.length;j++){
+              like[j]=parseInt(like[j]);
+              if(like[j] > like[i] ){
+                  temp=test[j];
+                  test[j]=test[i];
+                  test[i]=temp;
+                 
+                  
+              }
+              console.log(test);
+          }
+      
+     
+      
+      }
+           for(n=0;n<test.length;n++){
+          $('ol').append('<li style="">'+test[n].name+'</li>')
+               
+               
+      }
+      
+     $('[data-max=maxi]').hide();
+      $('[data-min=mini]').css("display","block");
+  });
+         $('[data-min=mini]').click(function(){
+              $('ol').html('Sort<i class="fa fa-sort-down"data-max="maxi" ></i>');
+           $('[data-min=mini]').hide();
+      $('[data-max=maxi]').css("display","block");  
+         });
+</script>
+    
+</body>
+</html>
